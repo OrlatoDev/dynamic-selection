@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "DynamicSelection",
+    "version": "1.0",
+    "description": "Changes selection color when selecting hex codes on any website, making it easy for web developers and designers.",
+    "icons": {
+        "16": "/assets/icon16.png",
+        "32": "/assets/icon32.png",
+        "96": "/assets/icon96.png"
+    },
+    "permissions": ["activeTab"],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "/assets/icon16.png",
+            "32": "/assets/icon32.png",
+            "96": "/assets/icon96.png"
+        },
+        "default_title": "DynamicSelection",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["index.js"]
+        }
+    ]
+}
